@@ -2,11 +2,12 @@
 """
 Created on Tue Feb  3 13:20:45 2015
 
-Implementation of %METHOD_NAME% method, version %VERSION%
+Implementation of Kachmazh method, version 1
 testFunc.py
 @author: Artem Sevastopolsky
 """
 
+import os
 #from pprint import pprint
 
 TESTS_DIR = None
@@ -14,23 +15,26 @@ TESTS_PAT = None
 TESTS_TO_CREATE_PROG = (None, )
 
 def readTest(self, idx):
-    '''Reads test from file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx) 
-    in order self.PARAM_SEQ.
+    '''Reads test from file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx).
+    Test should be stored in such way that the order of params doesn't matter.
     I/O Exceptions are not being caught.
     
     readTest(self, int idx) -> dict params
     '''
+    fin = open(os.path.join(self.TESTS_DIR, self.TESTS_PAT.format(idx)))
     pass
+    fin.close()
 
 def dumpTest(self, idx, params):
-    '''Stores test in file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx),
-    unpacking params in order self.PARAM_SEQ.
+    '''Stores test in file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx).
+    Test should be stored in such way that the order of params doesn't matter.
     I/O Exceptions are not being caught.
     
     dumpTest(self, int idx, dict params) -> None
     '''
-    PARAM_ORDER = (None, )      # Specify this and then iterate over it
+    fout = open(os.path.join(self.TESTS_DIR, self.TESTS_PAT.format(idx)))
     pass
+    fout.close()
 
 def genTest(self, idx):
     '''Creates and dumps (using self.dumpTest) the test that should be
@@ -49,8 +53,9 @@ def logStr(self, answer):
     
     logStr(self, dict answer) -> str logString
     '''
-    ANSWER_ORDER = (None, )     # Specify this and then iterate over it
+    ANSWER_ORDER = (None, )     # Specify this and then iterate by it
     logString = ""
-    pass
+    for el in ANSWER_ORDER:
+        #if el == :
+            pass
     return logString
-    

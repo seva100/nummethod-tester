@@ -21,9 +21,7 @@ tester = NumMethodTester()
 # Fields that must be specified by instance owner
 tester.TESTS_DIR = os.path.join(curDirAbsPath, "tests")
 tester.TESTS_PAT = None
-tester.PARAM_ORDER = (None, )
 tester.TESTS_TO_CREATE_PROG = (None, )
-tester.ANSWER_ORDER = (None, )
 tester.LOG_DIR = os.path.join(curDirAbsPath, "logs")
 tester.LOG_PAT = None
 # Methods that must be specified by instance owner
