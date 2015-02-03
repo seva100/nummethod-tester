@@ -82,7 +82,10 @@ class NumMethodTester:
             lst = re.findall(reLogPat, el)
             if lst:
                 logsNo.append(int(lst[0]))
-        return max(logsNo)
+        if len(logsNo) == 0:
+            return 1
+        else:
+            return max(logsNo)
     
     def _makeLogWithContent(self, stringToWrite):
         '''Makes new log in self.LOG_DIR according to self.LOG_PAT 

@@ -29,7 +29,7 @@ def dumpTest(self, idx, params):
     
     dumpTest(self, int idx, dict params) -> None
     '''
-    PARAM_ORDER = (None, )      # Specify this and then iterate by it
+    PARAM_ORDER = (None, )      # Specify this and then iterate over it
     pass
 
 def genTest(self, idx):
@@ -49,7 +49,7 @@ def logStr(self, answer):
     
     logStr(self, dict answer) -> str logString
     '''
-    ANSWER_ORDER = (None, )     # Specify this and then iterate by it
+    ANSWER_ORDER = (None, )     # Specify this and then iterate over it
     logString = ""
     pass
     return logString
