@@ -16,14 +16,16 @@ TESTS_TO_CREATE_PROG = (None, )
 
 def readTest(self, idx):
     '''Reads test from file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx).
-    Test should be stored in such way that the order of params can be recognized.
+    Test should be stored in such way that the order of params doesn't matter.
     I/O Exceptions are not being caught.
     
     readTest(self, int idx) -> dict params
     '''
     fin = open(os.path.join(self.TESTS_DIR, self.TESTS_PAT.format(idx)))
+    params = {}
     pass
     fin.close()
+    return params
 
 def dumpTest(self, idx, params):
     '''Stores test in file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx).
