@@ -16,7 +16,7 @@ TESTS_TO_CREATE_PROG = (None, )
 
 def readTest(self, idx):
     '''Reads test from file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx).
-    Test should be stored in such way that the order of params doesn't matter.
+    Test should be stored in such way that the order of params can be recognized.
     I/O Exceptions are not being caught.
     
     readTest(self, int idx) -> dict params
@@ -27,12 +27,12 @@ def readTest(self, idx):
 
 def dumpTest(self, idx, params):
     '''Stores test in file "$self.TESTS_DIR/$self.TESTS_PAT".format(idx).
-    Test should be stored in such way that the order of params doesn't matter.
+    Test should be stored in such way that the order of params can be recognized.
     I/O Exceptions are not being caught.
     
     dumpTest(self, int idx, dict params) -> None
     '''
-    fout = open(os.path.join(self.TESTS_DIR, self.TESTS_PAT.format(idx)))
+    fout = open(os.path.join(self.TESTS_DIR, self.TESTS_PAT.format(idx)), 'w')
     pass
     fout.close()
 

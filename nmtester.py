@@ -59,6 +59,7 @@ class NumMethodTester:
     def listAllTests(self):
         '''Shows numbers of all tests in folder self.TESTS_DIR that respond to
         pattern self.TESTS_PAT.
+        I/O exceptions are not being caught.
         
         listAllTests(self) -> tuple testNumbers
         '''
@@ -74,6 +75,7 @@ class NumMethodTester:
     def getLastLogNo(self):
         '''Returns the greatest number of log existing in self.LOG_DIR that 
         responds to self.LOG_PAT.
+        I/O exceptions are not being caught.
         '''
         allFileNames = os.listdir(self.LOG_DIR)
         reLogPat = '^' + self.LOG_PAT.replace('{}', r'(\d*)') + '$'
