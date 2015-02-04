@@ -8,6 +8,7 @@ testFunc.py
 """
 
 import os
+#import numpy as np
 #from pprint import pprint
 
 TESTS_DIR = None
@@ -20,6 +21,17 @@ def readTest(self, idx):
     I/O Exceptions are not being caught.
     
     readTest(self, int idx) -> dict params
+    '''
+    
+    '''Test example:
+    A 3
+    1 2 3
+    4 5 6
+    7 8 9
+    b
+    3 2 1
+    eps 1e-6
+    maxIter 100
     '''
     fin = open(os.path.join(self.TESTS_DIR, self.TESTS_PAT.format(idx)))
     params = {}
