@@ -26,12 +26,12 @@ class NumMethodTester:
     readTest = None
     dumpTest = None
     genTest = None
-    calculate = None
     logStr = None
+    calculate = None
     
     def checkAssigned(self):
-        '''Checks that all fields and methods of the class have been assigned
-        by instance owner.'''
+        '''Checks that all fields and methods of the class have been overloaded
+        (or assigned) by instance owner.'''
         assert self.TESTS_DIR
         assert self.TESTS_PAT
         assert self.TESTS_TO_CREATE_PROG
@@ -41,8 +41,8 @@ class NumMethodTester:
         assert self.readTest
         assert self.dumpTest
         assert self.genTest
-        assert self.calculate
         assert self.logStr
+        assert self.calculate
     
     def genAllTests(self):
         '''Creates and dumps (using self.genTest) all tests that should be 
@@ -51,7 +51,7 @@ class NumMethodTester:
         
         If tests with defined numbers already exist, it doesn't touch them.
         
-        genAllTests() -> None
+        self.genAllTests() -> None
         '''
         for testNo in self.TESTS_TO_CREATE_PROG:
             self.genTest(testNo)
@@ -61,7 +61,7 @@ class NumMethodTester:
         pattern self.TESTS_PAT.
         I/O exceptions are not being caught.
         
-        listAllTests(self) -> tuple testNumbers
+        self.listAllTests() -> tuple testNumbers
         '''
         allFileNames = os.listdir(self.TESTS_DIR)
         reTestPat = '^' + self.TESTS_PAT.replace('{}', r'(\d*)') + '$'
@@ -70,7 +70,17 @@ class NumMethodTester:
             lst = re.findall(reTestPat, el)
             if lst:
                 testsNo.append(int(lst[0]))
+        testsNo.sort()
         return tuple(testsNo)
+    
+    def getAnswerFor(self, testNo):
+        '''Reads a desired test and returns the answer to it.
+        
+        self.getAnswerFor(testNo) -> dict answer
+        '''
+        inputParams = self.readTest(testNo)
+        answer = self.calculate(inputParams)
+        return answer
     
     def getLastLogNo(self):
         '''Returns the greatest number of log existing in self.LOG_DIR that 
@@ -85,7 +95,7 @@ class NumMethodTester:
             if lst:
                 logsNo.append(int(lst[0]))
         if len(logsNo) == 0:
-            return 1
+            return 0
         else:
             return max(logsNo)
     

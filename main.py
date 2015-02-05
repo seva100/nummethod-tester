@@ -2,37 +2,28 @@
 """
 Created on Mon Feb  2 12:20:47 2015
 
-Implementation of %METHOD_NAME% method, version %VERSION%
 main.py
 @author: Artem Sevastopolsky
 """
 
+# This is the script you're going to run.
+# You can specify _method_name and _version for convenience.
+
 _method_name = None
 _version = None
 
-import os
-from calculate import calculate
-from TestFunc import (readTest, dumpTest, genTest, logStr)
-from nmtester import NumMethodTester
+from myTester import MyTester
 
-curDirAbsPath = os.path.abspath(os.curdir)
-
-tester = NumMethodTester()
-# Fields that must be specified by instance owner
-tester.TESTS_DIR = os.path.join(curDirAbsPath, "tests")
-tester.TESTS_PAT = None
-tester.TESTS_TO_CREATE_PROG = (None, )
-tester.LOG_DIR = os.path.join(curDirAbsPath, "logs")
-tester.LOG_PAT = None
-# Methods that must be specified by instance owner
-tester.readTest = readTest
-tester.dumpTest = dumpTest
-tester.genTest = genTest
-tester.calculate = calculate
-tester.logStr = logStr
+tester = MyTester()
 
 if __name__ == "__main__":
+    tester.checkAssigned()
     tester.genAllTests()
-    tester.makeFullLog()
+    tester.makeFullLog()    # you can comment this if you don't want to make a report.
+    
+    # Here you can add some testing functionality: plot graphs of solutions,
+    # make comparisons or etc. In order to do that, you can use 
+    #   answer = tester.getAnswerFor(testNo)
+    # and do smth with this answer.
     
     pass
