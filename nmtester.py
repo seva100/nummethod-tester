@@ -49,13 +49,11 @@ class NumMethodTester:
         created programmable way. The sequence of those tests should be set
         as the self.TESTS_TO_CREATE_PROG tuple by hand.
         
-        If tests with defined numbers already exist, it doesn't touch them.
-        
         self.genAllTests() -> None
         '''
         for testNo in self.TESTS_TO_CREATE_PROG:
             self.genTest(testNo)
-
+    
     def listAllTests(self):
         '''Shows numbers of all tests in folder self.TESTS_DIR that respond to
         pattern self.TESTS_PAT.

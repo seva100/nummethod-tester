@@ -18,7 +18,7 @@ tester = MyTester()
 
 if __name__ == "__main__":
     tester.checkAssigned()
-    tester.genAllTests()
+    # You can call genTests.genAllTests(tester) here, or do it only once
     tester.makeFullLog()    # you can comment this if you don't want to make a report.
     
     # Here you can add some testing functionality: plot graphs of solutions,

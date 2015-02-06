@@ -22,12 +22,14 @@ from calculate import calculate
 class MyTester(NumMethodTester):
     
     def __init__(self):
-        self.curDirAbsPath = os.path.abspath(os.curdir)
-        self.TESTS_DIR = os.path.join(self.curDirAbsPath, "tests")
-        self.TESTS_PAT = "test {}"
-        self.TESTS_TO_CREATE_PROG = (4, 5, 6, )
-        self.LOG_DIR = os.path.join(self.curDirAbsPath, "logs")
-        self.LOG_PAT = "log {}"
+        curDirAbsPath = os.path.abspath(os.curdir)
+        self.TESTS_DIR = os.path.join(curDirAbsPath, "tests")  # (example)
+        self.TESTS_PAT = "test {}"      # (example)
+                                        # TESTS_PAT should contain only one '{}' seq
+        self.TESTS_TO_CREATE_PROG = (None, )
+        self.LOG_DIR = os.path.join(curDirAbsPath, "logs")  # (example)
+        self.LOG_PAT = "log {}"         # (example)
+                                        # LOGS_PAT should contain only one '{}' seq
         self.calculate = calculate
     
     def readTest(self, testNo):
@@ -47,7 +49,7 @@ class MyTester(NumMethodTester):
     
     def dumpTest(self, testNo, params):
         '''Stores test in file "$self.TESTS_DIR/$self.TESTS_PAT".format(testNo).
-        Test should be stored in such way that the order of params
+        It's useful whent test is stored in such way that the order of params
         doesn't matter and can be recognized.
         I/O Exceptions are not being caught.
         
@@ -62,15 +64,13 @@ class MyTester(NumMethodTester):
         created programmable way. Might support "pass" implementation if
         there's no such test. 
         
-        If test with defined number already exist, it doesn't touch it.
-        
         genTest(self, int testNo) -> None
         '''
         params = {}
         #if testNo == :
-            pass
+        pass
         #elif testNo == :
-        self.dumpTest(params)
+        self.dumpTest(testNo, params)
     
     def logStr(self, answer):
         '''Makes string that is to be added to log file. It must show everything
