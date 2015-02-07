@@ -12,7 +12,7 @@ main.py
 _method_name = None
 _version = None
 
-from myTester import MyTester
+from mytester import MyTester
 
 tester = MyTester()
 

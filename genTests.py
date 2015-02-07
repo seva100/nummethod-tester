@@ -6,7 +6,7 @@ genTests.py
 @author: Artem Sevastopolsky
 """
 
-from mytester import MyTester
+from ./mytester import MyTester
 
 def genTest(tester, testNo):
     tester.genTest(testNo)

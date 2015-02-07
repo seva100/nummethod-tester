@@ -112,7 +112,7 @@ class NumMethodTester:
         '''Makes new log in self.LOG_DIR according to self.LOG_PAT 
         for test testNo. No. of new log will be the greatest existing + 1.'''
         inputParams = self.readTest(testNo)
-        outputParams = self.calculate(inputParams)
+        outputParams = self.calculate(inputParams, testNo)
         
         stringToWrite = 'Created on ' + str(datetime.now()) + '\n' + \
                         '=' * 30 + ' TEST #{} '.format(testNo) + '=' * 30 + '\n' \
@@ -127,7 +127,7 @@ class NumMethodTester:
         stringToWrite = 'Created on ' + str(datetime.now()) + '\n'
         for testNo in self.listAllTests():
             inputParams = self.readTest(testNo)
-            outputParams = self.calculate(inputParams)
+            outputParams = self.calculate(inputParams, testNo)
             stringToWrite += '=' * 30 + ' TEST #{} '.format(testNo) + '=' * 30 + '\n' \
                 + self.logStr(outputParams)
         self._makeLogWithContent(stringToWrite)
