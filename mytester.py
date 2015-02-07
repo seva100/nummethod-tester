@@ -16,6 +16,7 @@ mytester.py
 
 import os
 #from pprint import pformat
+#import matplotlib.pyplot as plt
 from nmtester import NumMethodTester
 from calculate import calculate
 

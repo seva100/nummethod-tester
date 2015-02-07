@@ -14,9 +14,9 @@ import time
 #import numpy.linalg as LA
 #import scipy as sp
 
-def calculate(params):
+def calculate(params, testNo=None):
     '''Performs the main calculation procedure over the params.
-    calculate(dict params) -> dict answer
+    calculate(dict params, int testNo=None) -> dict answer
     '''
     # You can print a debug info onto the main screen
     
