@@ -3,7 +3,7 @@
 Created on Mon Feb  2 11:37:31 2015
 
 NumMethodTester lib (nmtester).
-Build to help testing Numerical Methods.
+Built to help testing Numerical Methods.
 nmtester.py
 
 @author: Artem Sevastopolsky
@@ -13,8 +13,8 @@ import os
 import re
 from datetime import datetime
 
+
 class NumMethodTester:
-    
     # Fields that must be specified by instance owner
     TESTS_DIR = None
     TESTS_PAT = None
@@ -119,7 +119,6 @@ class NumMethodTester:
                         + self.logStr(outputParams)
         self._makeLogWithContent(stringToWrite)
         
-    
     def makeFullLog(self):
         '''Makes new log in self.LOG_DIR according to self.LOG_PAT 
         for all tests in self.TEST_DIR. 
@@ -131,5 +130,3 @@ class NumMethodTester:
             stringToWrite += '=' * 30 + ' TEST #{} '.format(testNo) + '=' * 30 + '\n' \
                 + self.logStr(outputParams)
         self._makeLogWithContent(stringToWrite)
-    
-    
