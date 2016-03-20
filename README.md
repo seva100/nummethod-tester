@@ -8,7 +8,7 @@ Library supports auto-generation of tests, reporting results; another functional
 User should fill in the gaps in several functions in files:
 * **mytester.py**
 * **calculate.py**
-* [**main.py**] (not necessarily)
+* **main.py** (not necessarily)
 
 Files are provided with comments on the meaning of the functions.
 
